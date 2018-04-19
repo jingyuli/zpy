@@ -11,6 +11,11 @@ socketio = SocketIO(app)
 if __name__ == '__main__':
         socketio.run(app)
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+
 # handles jsons from client
 @socketio.on('json')
 def handle_json(json):
